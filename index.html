@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Fire Sensitivity Tool</title>
+
+    <style>
+.navbar {
+    width: 100%;
+    padding: 18px 6%;
+    background: #111;
+    border-bottom: 1px solid #333;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff3b30;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ff3b30;
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 12px;
+        font-size: 13px;
+    }
+
+}
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .tool-box {
+            background: #171717;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #333;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            background: #242424;
+            color: white;
+            border: 1px solid #444;
+            font-size: 16px;
+        }
+
+        input[type="range"] {
+            padding: 0;
+        }
+
+        .range-value {
+            margin-top: 8px;
+            text-align: right;
+            color: #ff4b3e;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #ff3b30;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff554d;
+        }
+
+        #result {
+            display: none;
+            margin-top: 30px;
+            background: #101010;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px;
+            margin: 8px 0;
+            background: #242424;
+            border-radius: 7px;
+        }
+
+        .value {
+            font-weight: bold;
+            color: #ff4b3e;
+        }
+
+        .copy-button {
+            background: #333;
+        }
+
+        .copy-button:hover {
+            background: #444;
+        }
+.info-section {
+    margin-top: 40px;
+    background: #171717;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.info-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.dpi-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.dpi-box div {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dpi-box h3 {
+    margin-top: 0;
+}
+
+.dpi-box p {
+    color: #ff4b3e;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .dpi-box {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+
+</head>
+
+
+<b<nav class="navbar">
+
+    <div class="logo">
+        🔥 FF SENSI
+    </div>
+
+    <div class="menu">
+        <a href="#tool">🎯 Sensitivity</a>
+        <a href="#dpi">⚡ DPI Guide</a>
+        <a href="#tips">🎮 Tips</a>
+    </div>
+
+</nav>
+<div class="container">
+
+    <h1>🔥 Free Fire Sensitivity Tool</h1>
+
+    <p class="subtitle">
+        Generate sensitivity settings for your device
+    </p>
+
+
+    <div class="tool-box">
+
+
+        <!-- DEVICE -->
+
+        <label for="device">
+            📱 Select Device
+        </label>
+
+        <select id="device">
+
+            <option value="redmi">
+                Redmi
+            </option>
+
+            <option value="infinix">
+                Infinix
+            </option>
+
+            <option value="samsung">
+                Samsung
+            </option>
+
+            <option value="realme">
+                Realme
+            </option>
+
+            <option value="tecno">
+                Tecno
+            </option>
+
+            <option value="iphone">
+                iPhone
+            </option>
+
+            <option value="other">
+                Other
+            </option>
+
+        </select>
+
+
+        <!-- RAM -->
+
+        <label for="ram">
+            🧠 RAM
+        </label>
+
+        <select id="ram">
+
+            <option value="3">
+                3 GB
+            </option>
+
+            <option value="4">
+                4 GB
+            </option>
+
+            <option value="6">
+                6 GB
+            </option>
+
+            <option value="8">
+                8 GB
+            </option>
+
+            <option value="12">
+                12 GB+
+            </option>
+
+        </select>
+
+
+        <!-- DPI -->
+
+        <label for="dpi">
+            ⚡ DPI
+        </label>
+
+        <input
+            type="range"
+            id="dpi"
+            min="400"
+            max="1000"
+            value="600"
+            oninput="updateDPI()"
+        >
+
+        <div class="range-value">
+            DPI: <span id="dpiValue">600</span>
+        </div>
+
+
+        <!-- FIRE BUTTON -->
+
+        <label for="fireButton">
+            🔫 Fire Button Size
+        </label>
+
+        <input
+            type="range"
+            id="fireButton"
+            min="30"
+            max="60"
+            value="45"
+            oninput="updateFireButton()"
+        >
+
+        <div class="range-value">
+            Fire Button: <span id="fireValue">45</span>%
+        </div>
+
+
+        <!-- GENERATE -->
+
+        <button onclick="generateSensitivity()">
+            🎯 Generate Sensitivity
+        </button>
+
+
+        <!-- RESULT -->
+
+        <div id="result">
+
+            <h2>🎯 Your Sensitivity</h2>
+
+            <div class="setting">
+                <span>General</span>
+                <span class="value" id="general">-</span>
+            </div>
+
+            <div class="setting">
+                <span>Red Dot</span>
+                <span class="value" id="redDot">-</span>
+            </div>
+
+            <div class="setting">
+                <span>2X Scope</span>
+                <span class="value" id="scope2x">-</span>
+            </div>
+
+            <div class="setting">
+                <span>4X Scope</span>
+                <span class="value" id="scope4x">-</span>
+            </div>
+
+            <div class="setting">
+                <span>Sniper Scope</span>
+                <span class="value" id="sniper">-</span>
+            </div>
+
+            <div class="setting">
+                <span>Free Look</span>
+                <span class="value" id="freeLook">-</span>
+            </div>
+
+
+            <button
+                class="copy-button"
+                onclick="copySettings()"
+            >
+                📋 Copy Settings
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+function updateDPI() {
+
+    let dpi = document.getElementById("dpi").value;
+
+    document.getElementById("dpiValue").innerText = dpi;
+
+}
+
+
+function updateFireButton() {
+
+    let fire = document.getElementById("fireButton").value;
+
+    document.getElementById("fireValue").innerText = fire;
+
+}
+
+
+function generateSensitivity() {
+
+    let device =
+        document.getElementById("device").value;
+
+    let ram =
+        parseInt(document.getElementById("ram").value);
+
+    let dpi =
+        parseInt(document.getElementById("dpi").value);
+
+    let fire =
+        parseInt(document.getElementById("fireButton").value);
+
+
+    /*
+       Base sensitivity
+    */
+
+    let general = 95;
+    let redDot = 90;
+    let scope2x = 85;
+    let scope4x = 80;
+    let sniper = 55;
+    let freeLook = 75;
+
+
+    /*
+       RAM adjustment
+    */
+
+    if (ram <= 3) {
+
+        general -= 5;
+        redDot -= 5;
+        scope2x -= 5;
+
+    }
+
+    else if (ram >= 8) {
+
+        general += 3;
+        redDot += 3;
+        scope2x += 3;
+
+    }
+
+
+    /*
+       DPI adjustment
+    */
+
+    if (dpi >= 800) {
+
+        general += 3;
+        redDot += 2;
+
+    }
+
+    else if (dpi <= 500) {
+
+        general -= 3;
+        redDot -= 2;
+
+    }
+
+
+    /*
+       Fire button adjustment
+    */
+
+    if (fire >= 50) {
+
+        general += 2;
+
+    }
+
+    else if (fire <= 35) {
+
+        general -= 2;
+
+    }
+
+
+    /*
+       Device adjustment
+    */
+
+    if (device === "iphone") {
+
+        general += 2;
+        redDot += 2;
+
+    }
+
+    else if (device === "infinix") {
+
+        general += 1;
+
+    }
+
+    else if (device === "redmi") {
+
+        redDot += 1;
+
+    }
+
+
+    /*
+       Keep values between 0 and 100
+    */
+
+    general = Math.max(0, Math.min(100, general));
+    redDot = Math.max(0, Math.min(100, redDot));
+    scope2x = Math.max(0, Math.min(100, scope2x));
+    scope4x = Math.max(0, Math.min(100, scope4x));
+    sniper = Math.max(0, Math.min(100, sniper));
+    freeLook = Math.max(0, Math.min(100, freeLook));
+
+
+    /*
+       Show results
+    */
+
+    document.getElementById("general").innerText = general;
+
+    document.getElementById("redDot").innerText = redDot;
+
+    document.getElementById("scope2x").innerText = scope2x;
+
+    document.getElementById("scope4x").innerText = scope4x;
+
+    document.getElementById("sniper").innerText = sniper;
+
+    document.getElementById("freeLook").innerText = freeLook;
+
+    document.getElementById("result").style.display = "block";
+
+}
+
+
+function copySettings() {
+
+    let settings =
+        "🔥 Free Fire Sensitivity Settings\n\n" +
+
+        "General: " +
+        document.getElementById("general").innerText + "\n" +
+
+        "Red Dot: " +
+        document.getElementById("redDot").innerText + "\n" +
+
+        "2X Scope: " +
+        document.getElementById("scope2x").innerText + "\n" +
+
+        "4X Scope: " +
+        document.getElementById("scope4x").innerText + "\n" +
+
+        "Sniper Scope: " +
+        document.getElementById("sniper").innerText + "\n" +
+
+        "Free Look: " +
+        document.getElementById("freeLook").innerText;
+
+
+    navigator.clipboard.writeText(settings);
+
+    alert("✅ Settings copied!");
+
+}
+
+</script>
+
+
+</body>
+<nav class="navbar">
+
+    <div class="logo">
+        🔥 FF SENSI
+    </div>
+
+    <div class="menu">
+        <a href="#tool">🎯 Sensitivity</a>
+        <a href="#dpi">⚡ DPI Guide</a>
+        <a href="#tips">🎮 Tips</a>
+    </div>
+
+</nav>
+</html>
